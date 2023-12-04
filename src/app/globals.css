@@ -2,26 +2,43 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+html {
+	scroll-behavior: smooth !important;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+	background: #171717;
+	overflow-x: hidden;
+}
+/* #444444 */
+
+.h1-text {
+	@apply text-white text-4xl lg:text-6xl font-extrabold;
+}
+.description-text {
+	@apply text-[#adb7be] text-base lg:text-xl;
+}
+
+.btn {
+	@apply px-6 py-3 rounded-full cursor-pointer;
+}
+
+.card-bg {
+	@apply bg-[#444444] rounded-3xl border border-[#3a3a3a];
+}
+
+.text-gradient {
+	@apply text-transparent bg-clip-text bg-gradient-to-br from-pink-800 via-purple-500 to-violet-800;
+}
+
+.bg-gradient {
+	@apply bg-gradient-to-br from-pink-800 via-purple-500 to-violet-800;
+}
+
+.input {
+	@apply font-medium text-lg text-gray-100 border-2 border-gray-800 rounded-xl p-3 bg-[#313131]  focus:outline-none focus:ring focus:ring-purple-800;
+}
+
+.CardPage {
+	@apply min-h-screen w-full px-20 mt-[120px] flex justify-center items-center;
 }
