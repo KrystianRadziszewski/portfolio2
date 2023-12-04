@@ -3,7 +3,7 @@ import { NextResponse } from 'next/server';
 import { Resend } from 'resend';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
-const fromEmail = process.env.FROM_EMAIL;
+// const fromEmail = process.env.FROM_EMAIL;
 
 export async function POST(req) {
 	try {
@@ -12,7 +12,7 @@ export async function POST(req) {
 
 		const { name, email, subject, message } = body;
 		const data = await resend.emails.send({
-			from: fromEmail,
+			from: 'krystian-radziszewski-it@o2.pl',
 			to: email,
 			subject: subject,
 			react: (
