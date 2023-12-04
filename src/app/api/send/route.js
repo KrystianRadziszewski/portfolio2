@@ -6,13 +6,15 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 const fromEmail = process.env.FROM_EMAIL;
 
 export async function POST(req) {
-	const { body } = await req.json();
-	const { email, subject, message } = body;
 	try {
+		const body = await req.json();
+		console.log('body: ', body);
+
+		const { name, email, subject, message } = body;
 		const data = await resend.emails.send({
-			from: 'krystus93@o2.pl',
-			to: fromEmail,
-			subject: 'Test send',
+			from: fromEmail,
+			to: email,
+			subject: subject,
 			react: (
 				<>
 					<h1>{subject}</h1>
