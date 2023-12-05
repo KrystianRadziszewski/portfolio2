@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useRef, useState } from 'react';
-// import emailjs from '@emailjs/browser';
+import emailjs from '@emailjs/browser';
 
 const EmailForm = () => {
 	const [data, setData] = useState({
@@ -15,6 +15,15 @@ const EmailForm = () => {
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		console.log(data);
+
+		emailjs.sendForm(process.env.NEXT_PUBLIC_SERVICE_ID, process.env.NEXT_PUBLIC_TEMPLATE_ID, form.current, process.env.NEXT_PUBLIC_PUBLIC_KEY).then(
+			(result) => {
+				console.log(result.text);
+			},
+			(error) => {
+				console.log(error.text);
+			}
+		);
 
 		setData({ name: '', email: '', subject: '', message: '' });
 	};
