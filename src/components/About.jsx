@@ -48,7 +48,7 @@ const About = () => {
 
 	return (
 		<section id="about" className="text-white my-16 pt-[100px] relative ">
-			<div className="bg-purple-500 opacity-40 rounded-l-full h-[400px] w-[200px] lg:w-[400px] lg:rounded-full blur-2xl absolute bottom-1 right-2 translate-x-3/4 translate-y-10 -z-10" />
+			<div className="absolute bg-purple-500 opacity-40 rounded-l-full h-[400px] w-[200px] md:w-[400px] lg:rounded-full blur-2xl  bottom-1 right-2 translate-x-[15%] lg:translate-x-3/4 translate-y-10 -z-10" />
 			<div className=" flex flex-col mx-auto lg:grid lg:grid-cols-2 gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16">
 				<Image className="rounded-full bg-[#444444] p-2" src={avatar} width={500} height={500} alt="my avatar" />
 				<div className="mt-4 md:mt-0 text-left flex flex-col h-full">

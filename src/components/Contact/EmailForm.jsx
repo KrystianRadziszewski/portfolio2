@@ -1,6 +1,7 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
+// import emailjs from '@emailjs/browser';
 
 const EmailForm = () => {
 	const [data, setData] = useState({
@@ -9,35 +10,42 @@ const EmailForm = () => {
 		subject: '',
 		message: '',
 	});
+	const form = useRef();
+	const serviceID = process.env.YOUR_SERVICE_ID;
+	const templateID = process.env.YOUR_TEMPLATE_ID;
+	const publicKey = process.env.YOUR_PUBLIC_KEY;
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
-		// const data = {
-		// 	name: e.target.name.value,
-		// 	email: e.target.email.value,
-		// 	subject: e.target.subject.value,
-		// 	message: e.target.message.value,
-		// };
 
-		const response = await fetch('/api/send', {
-			method: 'POST',
-			header: {
-				'Content-Type': 'application/json',
+		emailjs.sendForm(serviceID, templateID, form.current, publicKey).then(
+			(result) => {
+				console.log(result.text);
 			},
-			body: JSON.stringify(data),
-		});
+			(error) => {
+				console.log(error.text);
+			}
+		);
 
-		const resData = await response.json();
-		console.log(resData);
+		// const response = await fetch('/api/send', {
+		// 	method: 'POST',
+		// 	header: {
+		// 		'Content-Type': 'application/json',
+		// 	},
+		// 	body: JSON.stringify(data),
+		// });
 
-		if (response.status === 200) {
-			console.log('Message send.');
-			setData({});
-		}
+		// const resData = await response.json();
+		// console.log(resData);
+
+		// if (response.status === 200) {
+		// 	console.log('Message send.');
+		// 	setData({});
+		// }
 	};
 
 	return (
-		<form onSubmit={handleSubmit} className="flex flex-col gap-8 p-4">
+		<form ref={form} onSubmit={handleSubmit} className="flex flex-col gap-8 p-4">
 			<input onChange={(e) => setData.name(e.target.value)} name="name" type="text" placeholder="Imię" required maxLength="20" className=" input" />
 			<input onChange={(e) => setData.email(e.target.value)} name="email" type="email" placeholder="Email" required maxLength="20" className=" input" />
 			<input onChange={(e) => setData.subject(e.target.value)} name="subject" type="text" placeholder="Temat" required maxLength="20" className=" input" />

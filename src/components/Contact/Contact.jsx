@@ -11,10 +11,10 @@ const Contact = () => {
 				<h2 className="text-white font-bold text-2xl my-2">Skontaktuj się</h2>
 				<p className="description-text mb-4 max-w-md">Skontaktuj się ze mną lub sprawdź korzystając z poniższych linków</p>
 				<div className="flex flex-row gap-6 mt-8 ">
-					<Link href={`/`}>
+					<Link href={`https://github.com/KrystianRadziszewski`}>
 						<FaGithub className="text-white text-5xl hover:text-gray-300 transition-colors" />
 					</Link>
-					<Link href={`/`}>
+					<Link href={`https://www.linkedin.com/in/krystian-radziszewski`}>
 						<FaLinkedin className="text-white text-5xl hover:text-gray-300 transition-colors" />
 					</Link>
 				</div>
