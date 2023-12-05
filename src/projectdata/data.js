@@ -7,7 +7,7 @@ export const projectData = [
 		description: `Jest to strona statyczna która została zbudowana przy użyciu freamwork'u Next JS, stylizacja wykonana za pomocą biblioteki tailwind CSS. z Jest ona responsywna, zawiera dane kontaktowe i galerię zdjęć z wykonanych realizacji.`,
 		imgUrl: img2,
 		liveUrl: 'https://tapicer-bialystok.pl',
-		githubUrl: 'https://tapicer-bialystok.pl',
+		githubUrl: 'https://github.com/KrystianRadziszewski/ASTAP',
 		technologies: ['JavaScript', 'Tailwind CSS', 'Next JS'],
 		tag: ['My', 'All'],
 	},
