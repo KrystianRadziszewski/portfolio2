@@ -34,7 +34,7 @@ export const projectData = [
 	{
 		id: 4,
 		title: 'Car Rent',
-		description: `Applikacja klienta do uczenia się na kurs egzaminacyjny na prawo jazdy. Zostałem poproszony o kilka modyfikacji w kodzie i dodanie strony 404 oraz modalów.`,
+		description: `Aplikacja demo imitująca stronę wypożyczalni aut, która jest połączona z zewnętrznym API do pobierania pojazdów i wyświetlania ich w odpowiednio sformatownaych kartach. Dane są pobierane i przetwarzane w odpowiedni sposób, aby następnie można było je filtrować w pasku do wyszukiwania pojazdów ustawiając odpowiednie dla siebie opcje.`,
 		imgUrl: img5,
 		liveUrl: 'https://car-rent-jet.vercel.app',
 		githubUrl: 'https://github.com/KrystianRadziszewski/Car-Rent',

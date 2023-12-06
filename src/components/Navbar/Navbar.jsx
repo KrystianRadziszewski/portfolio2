@@ -6,6 +6,8 @@ import NavLink from './NavLink';
 import Image from 'next/image';
 import logo from '../../../public/assets/mylogo.png';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/solid';
+import Poland from '../../../public/assets/poland.svg';
+import UK from '../../../public/assets/united-kingdom.svg';
 
 const navLinks = [
 	{
@@ -53,6 +55,9 @@ const Navbar = () => {
 								<NavLink href={link.path} title={link.title} />
 							</li>
 						))}
+						<li>
+							<Image src={Poland} height={30} alt="lngBtn" />
+						</li>
 					</ul>
 				</div>
 			</div>
@@ -66,6 +71,9 @@ const Navbar = () => {
 								<NavLink href={link.path} title={link.title} />
 							</li>
 						))}
+						<li>
+							<Image src={Poland} height={30} alt="lngBtn" />
+						</li>
 					</ul>
 					<div className=" h-screen w-screen fixed z-[5] bg-black/80" />
 				</div>

@@ -10,11 +10,12 @@ const EmailForm = () => {
 		subject: '',
 		message: '',
 	});
+	const [isLoading, setIsLoading] = useState(false);
 	const form = useRef();
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		console.log(data);
+		setIsLoading(true);
 
 		emailjs.sendForm(process.env.NEXT_PUBLIC_SERVICE_ID, process.env.NEXT_PUBLIC_TEMPLATE_ID, form.current, process.env.NEXT_PUBLIC_PUBLIC_KEY).then(
 			(result) => {
@@ -26,6 +27,7 @@ const EmailForm = () => {
 		);
 
 		setData({ name: '', email: '', subject: '', message: '' });
+		setIsLoading(false);
 	};
 
 	return (
@@ -61,8 +63,9 @@ const EmailForm = () => {
 				className=" input"
 				value={data.message}
 			/>
+			{/* <p className="text-green-500">Wiadomość wysłana</p> */}
 			<button type="submit" className="bg-gradient w-full p-1 mt-4 text-gray-200 rounded-full">
-				<span className=" block bg-[#444444] hover:bg-transparent transition rounded-full px-5 py-2 tracking-widest">Wyślij</span>
+				<span className=" block bg-[#444444] hover:bg-transparent transition rounded-full px-5 py-2 tracking-widest">{isLoading ? 'Wysyłanie...' : 'Wyślij'}</span>
 			</button>
 		</form>
 	);
