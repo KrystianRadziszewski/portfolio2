@@ -1,31 +1,37 @@
 'use client';
 
 import Link from 'next/link';
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import NavLink from './NavLink';
 import Image from 'next/image';
 import logo from '../../../public/assets/mylogo.png';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/solid';
 import Poland from '../../../public/assets/poland.svg';
 import UK from '../../../public/assets/united-kingdom.svg';
+import ButtonLanguage from '../UX/ButtonLanguage';
+import LanguageContext from '@/context/language';
 
 const navLinks = [
 	{
 		title: 'O mnie',
+		title2: 'About me',
 		path: '/#about',
 	},
 	{
 		title: 'Projekty',
+		title2: 'Projects',
 		path: '/#projects',
 	},
 	{
 		title: 'Kontakt',
+		title2: 'Contact',
 		path: '/#contact',
 	},
 ];
 
 const Navbar = () => {
 	const [mobileNav, setMobileNav] = useState(false);
+	const ctx = useContext(LanguageContext);
 
 	return (
 		<nav className="fixed top-0 left-0 right-0 bg-[#171717] border-b-2 border-gray-500 z-20">
@@ -49,14 +55,12 @@ const Navbar = () => {
 
 				{/* //DESKTOP NAV */}
 				<div className="menu hidden md:block w-auto">
-					<ul className="flex md:flex-row p-4 md:p-0 md:space-x-8">
+					<ul className="flex items-center md:flex-row p-4 md:p-0 md:space-x-8">
 						{navLinks.map((link, index) => (
-							<li key={index}>
-								<NavLink href={link.path} title={link.title} />
-							</li>
+							<li key={index}>{ctx.english ? <NavLink href={link.path} title={link.title2} /> : <NavLink href={link.path} title={link.title} />}</li>
 						))}
 						<li>
-							<Image src={Poland} height={30} alt="lngBtn" />
+							<ButtonLanguage>{ctx.english ? <Image src={UK} height={30} alt="lngBtn" /> : <Image src={Poland} height={30} alt="lngBtn" />}</ButtonLanguage>
 						</li>
 					</ul>
 				</div>
@@ -67,12 +71,10 @@ const Navbar = () => {
 				<div onClick={() => setMobileNav(false)}>
 					<ul className="flex flex-col gap-3 pt-2 pb-4 items-center">
 						{navLinks.map((link, index) => (
-							<li key={index}>
-								<NavLink href={link.path} title={link.title} />
-							</li>
+							<li key={index}>{ctx.english ? <NavLink href={link.path} title={link.title2} /> : <NavLink href={link.path} title={link.title} />}</li>
 						))}
 						<li>
-							<Image src={Poland} height={30} alt="lngBtn" />
+							<ButtonLanguage>{ctx.english ? <Image src={UK} height={30} alt="lngBtn" /> : <Image src={Poland} height={30} alt="lngBtn" />}</ButtonLanguage>
 						</li>
 					</ul>
 					<div className=" h-screen w-screen fixed z-[5] bg-black/80" />

@@ -1,4 +1,6 @@
+import { useContext } from 'react';
 import { img2, img3, img4, img5, img6, img7 } from '../../public/assets/projects';
+import LanguageContext from '@/context/language';
 
 export const projectData = [
 	{
@@ -53,7 +55,7 @@ export const projectData = [
 	},
 	{
 		id: 6,
-		title: 'Podziel się pomysłem',
+		title: 'Threads',
 		description: `Aplikacja stylowana na popularnej aplikacji Threads. Dzięki aplikacji możesz dodawać posty ze swojego konta. Komentować posty pozostałych. Tworzyć organizacje do których możesz zapraszać pozostałych użytkowników i dzielić się tylko z nimi tym czym chcesz. Wszystko jest przechowywane w bazie danych "MongoDB", a uwierzytelnianie jest przeprowadzone za pomocą "Clerk".`,
 		imgUrl: img7,
 		liveUrl: 'https://shared-app.vercel.app',
