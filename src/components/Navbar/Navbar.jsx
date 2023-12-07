@@ -10,24 +10,7 @@ import Poland from '../../../public/assets/poland.svg';
 import UK from '../../../public/assets/united-kingdom.svg';
 import ButtonLanguage from '../UX/ButtonLanguage';
 import LanguageContext from '@/context/language';
-
-const navLinks = [
-	{
-		title: 'O mnie',
-		title2: 'About me',
-		path: '/#about',
-	},
-	{
-		title: 'Projekty',
-		title2: 'Projects',
-		path: '/#projects',
-	},
-	{
-		title: 'Kontakt',
-		title2: 'Contact',
-		path: '/#contact',
-	},
-];
+import { navLinks } from '@/projectdata/data';
 
 const Navbar = () => {
 	const [mobileNav, setMobileNav] = useState(false);

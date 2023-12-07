@@ -1,11 +1,13 @@
 'use client';
 
+import LanguageContext from '@/context/language';
 import { projectData } from '@/projectdata/data';
 import Image from 'next/image';
 import Link from 'next/link';
-import React from 'react';
+import React, { useContext } from 'react';
 
 const CardProjectPage = ({ projectID }) => {
+	const ctx = useContext(LanguageContext);
 	const project = projectData.find((project) => project.id === projectID);
 
 	return (
@@ -19,8 +21,8 @@ const CardProjectPage = ({ projectID }) => {
 
 			<div className="md:row-start-2 md:row-end-3 flex flex-col gap-5 px-3 pb-10 border-4 border-gray-700/30 rounded-3xl ">
 				<h2 className="text-2xl text-slate-100">{project.title}</h2>
-				<p className="text-slate-300">{project.description}</p>
-				<h3 className="text-slate-100 pt-9">Technologie:</h3>
+				<p className="text-slate-300">{ctx.english ? project.descriptionENG : project.description}</p>
+				<h3 className="text-slate-100 pt-9">{ctx.english ? 'Technologies:' : 'Technologie:'}</h3>
 				<ul className="text-slate-300 list-disc">
 					{project.technologies.map((el, index) => (
 						<li key={index} className="ml-4">
@@ -37,7 +39,7 @@ const CardProjectPage = ({ projectID }) => {
 					</div>
 					<div className="bg-gradient w-full p-1 mt-4 text-gray-200 rounded-full ">
 						<span className=" block bg-[#444444] hover:bg-transparent transition rounded-full px-5 py-2 tracking-widest text-center">
-							<Link href={project.liveUrl}>ODWIEDŹ</Link>
+							<Link href={project.liveUrl}>{ctx.english ? 'VISIT' : 'ODWIEDŹ'}</Link>
 						</span>
 					</div>
 				</div>
@@ -51,7 +53,7 @@ const CardProjectPage = ({ projectID }) => {
 				</div>
 				<div className="bg-gradient w-full p-1 mt-4 text-gray-200 rounded-full ">
 					<span className=" block bg-[#444444] hover:bg-transparent transition rounded-full px-5 py-2 tracking-widest text-center">
-						<Link href={project.liveUrl}>ODWIEDŹ</Link>
+						<Link href={project.liveUrl}>{ctx.english ? 'VISIT' : 'ODWIEDŹ'}</Link>
 					</span>
 				</div>
 			</div>
