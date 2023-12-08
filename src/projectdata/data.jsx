@@ -20,6 +20,38 @@ export const navLinks = [
 	},
 ];
 
+export const TAB_DATA = [
+	{
+		title: 'Skills',
+		id: 'skills',
+		content: (
+			<ul className="list-disc pl-2">
+				<li>NextJS</li>
+				<li>TypeScript</li>
+				<li>TailwindCSS</li>
+				<li>Node.js</li>
+				<li>Express</li>
+				<li>PostgreSQL</li>
+				<li>MongoDB</li>
+				<li>Mongoose</li>
+			</ul>
+		),
+	},
+	{
+		title: 'Education',
+		id: 'education',
+		content: (
+			<ul className="list-disc pl-2">
+				<li>CSS – The Complete Guide | Udemy</li>
+				<li>JavaScript – The Complete Guide | Udemy</li>
+				<li>JavaScript – Jedyny Kurs, którego Potrzebujesz | MMC</li>
+				<li>React – The Complete Guide | Udemy</li>
+				<li>Next.js & React – The Complete Guide | Udemy</li>
+			</ul>
+		),
+	},
+];
+
 export const projectData = [
 	{
 		id: 1,
@@ -75,7 +107,7 @@ export const projectData = [
 		liveUrl: 'https://project-ideas-three.vercel.app',
 		githubUrl: 'https://github.com/KrystianRadziszewski/project_ideas',
 		technologies: ['TypeScript', 'Next JS', 'Tailwind CSS', 'Next-auth', 'MoongoDB'],
-		tag: ['Courses', 'All'],
+		tag: ['My', 'All'],
 	},
 	{
 		id: 6,
