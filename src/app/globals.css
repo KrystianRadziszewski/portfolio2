@@ -40,5 +40,5 @@ body {
 }
 
 .CardPage {
-	@apply min-h-screen w-full mb-16 px-20 mt-[140px] flex justify-center items-center;
+	@apply min-h-screen w-full mb-16 px-10 mt-[140px] flex justify-center items-center;
 }

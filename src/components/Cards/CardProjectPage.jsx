@@ -12,8 +12,8 @@ const CardProjectPage = ({ projectID }) => {
 
 	return (
 		<div className="max-w-3xl flex flex-col md:grid gap-4 md:grid-rows-2 relative">
-			<div className="relative md:hidden md:row-start-1 md:row-end-2 w-full">
-				<Image src={project.imgUrl} height={350} width={350} alt="project_img" />
+			<div className="relative h-[150px] md:hidden md:row-start-1 md:row-end-2 w-full">
+				<Image src={project.imgUrl} fill alt="project_img" />
 			</div>
 			<div className="relative hidden md:block md:row-start-1 md:row-end-2 w-full">
 				<Image src={project.imgUrl} fill objectFit="cover" alt="project_img" />

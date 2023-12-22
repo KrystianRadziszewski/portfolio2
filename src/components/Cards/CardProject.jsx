@@ -12,8 +12,8 @@ const CardProject = ({ imgUrl, title, url }) => {
 	return (
 		<div className="rounded-3xl overflow-hidden border-4 border-gray-600/40">
 			<div className="group mx-auto relative h-auto w-full hover:bg-[#424242] ">
-				<div className={`relative group-hover:opacity-10 transition h-4/6 w-full overflow-hidden`}>
-					<Image src={imgUrl} alt="project_img" width={500} height={500} />
+				<div className={`relative  group-hover:opacity-10 transition h-[150px] lg:h-[200px] w-full overflow-hidden`}>
+					<Image src={imgUrl} alt="project_img" fill />
 				</div>
 				<div className="hidden w-1/2 p-3 text-center group-hover:block absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] ">
 					<CardBorderHover>
